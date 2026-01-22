@@ -1,0 +1,40 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract DeFi_Vault {
+
+    // Here firstly, I am using mapping to store ETH deposit of each user 
+    mapping(address => uint256) public userDeposit;
+
+    // Deposit ETH into the vault (Deposit Logic)
+    function deposit() external payable {
+        require(msg.value > 0, "Deposit amount must be greater than 0");
+
+        userDeposit[msg.sender] += msg.value;
+    }
+
+    // Now, to Withdraw a specific amount of ETH from the user's deposit (Withdrawal Logic)
+    function withdraw(uint256 amount) external {
+        require(amount > 0, "Withdrawal amount must be greater than 0");
+
+        //Using appropriate function so that we cannot withdraw more than the user balance which remains in the account (Security)
+        require(userDeposit[msg.sender] >= amount, "Insufficient balance");
+
+
+        // Now, to ensure the user's balance is updated in the mapping before funds are transferred to mitigate potential re-entrancy risks (State Management)
+
+        userDeposit[msg.sender] -= amount;
+
+        // finally, to transfer ETH to the user
+        userDeposit[msg.sender] -= amount; // update first
+
+(bool success, ) = msg.sender.call{value: amount}("");
+require(success);
+
+    }
+
+    // For Checking the contract ETH balance
+    function getVaultBalance() external view returns (uint256) {
+        return address(this).balance;
+    }
+}
