@@ -26,7 +26,7 @@ contract DeFi_Vault {
         userDeposit[msg.sender] -= amount;
 
         // finally, to transfer ETH to the user
-        userDeposit[msg.sender] -= amount; // update first
+       
 
 (bool success, ) = msg.sender.call{value: amount}("");
 require(success);
