@@ -1,10 +1,11 @@
-#This README includes two Project details -
-1. DeFi Vault
-2. Decentralized Governance
+#This README includes the Project details of - 
 
-I did these two project as an induction task for GDG club's Blockchain Division.
+DeFi Vault
 
-#1 . Decentralized or DeFi Vault -
+I did this project as an induction task for GDG club's Blockchain Division.
+
+
+. Decentralized or DeFi Vault -
 Introduction - It is a vault designed for users to securely withdraw or transfer their ETH Deposits.
 Features - 
 1. It has appropriate functions to allow user to send ETH to the contract.
