@@ -1,2 +1,2 @@
 # GDG-Blockchain-Induction-Task
-This is a repo created by Me, Ayush Mandal from ChE'29 for blockchain division induction, which focuses on the LVL1 PS given during induction process, with a proper README describing the approach used. It also Includes the link of the verification of the contract.
+This is a repo created by Me, Ayush Mandal from ChE'29 for blockchain division induction, which focuses on the LVL1 PS given during induction process, with a proper README describing the approach used. It also Includes the link of the verification of the contract. Besides this, I used the resources given in the doc file for induction for learning solidity and used the faucet given there to verify my contract.
